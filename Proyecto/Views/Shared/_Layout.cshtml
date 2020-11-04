@@ -45,12 +45,23 @@
             <th> Nombre </th>
             <th>Apellido Paterno </th>
             <th>Apellido Materno</th>
-            <th>Status</th>
+            <th>Edad</th>
+            <th>Activo</th>
+            <th>Options</th>
         </tr>
-        @foreach (var item in @Model.reader)
+       
+        @while(@Model.reader.Read())
         {
             <tr>
-                <th>item.</th>
+                <th>@Model.reader["ID"] </th>
+                <th>@Model.reader["Nombre"] </th>
+                <th>@Model.reader["APaterno"] </th>
+                <th>@Model.reader["AMaterno"] </th>
+                <th>@Model.reader["Edad"] </th>
+                <th>@if ((bool)(@Model.reader["IsActive"])) {
+                        @Html.CheckBoxFor();
+                
+                } </th>
             </tr>
         }
 
