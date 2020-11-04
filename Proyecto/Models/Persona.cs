@@ -12,6 +12,10 @@ namespace Proyecto.Models
         public String AMaterno { get; set; }
         public int Edad { get; set; }
         public Boolean IsActive { get; set; }
+        
+
 
     }
+
+
 }

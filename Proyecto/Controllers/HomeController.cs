@@ -1,6 +1,7 @@
 ﻿using Proyecto.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,7 +12,13 @@ namespace Proyecto.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            SqlConnection Conection = new SqlConnection("server=INT21698\\MSSQLSERVER01; database=Personas; integrated security = true");
+            var model = new DataBase();
+            Conection.Open();
+            model.reader = new SqlCommand("SELECT * FROM Persona", Conection).ExecuteReader();
+
+            return View(model);
+
         }
 
         [HttpPost]

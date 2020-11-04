@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿
+@model Proyecto.Models.DataBase
+
+<!DOCTYPE html>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -26,8 +30,31 @@
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                 </ul>
             </div>
+            <div>
+
+
+
+            </div>
+
         </div>
+
     </div>
+    <table class="table">
+        <tr>
+            <th> ID</th>
+            <th> Nombre </th>
+            <th>Apellido Paterno </th>
+            <th>Apellido Materno</th>
+            <th>Status</th>
+        </tr>
+        @foreach (var item in @Model.reader)
+        {
+            <tr>
+                <th>item.</th>
+            </tr>
+        }
+
+    </table>
     <div class="container body-content">
         @RenderBody()
         <hr />
