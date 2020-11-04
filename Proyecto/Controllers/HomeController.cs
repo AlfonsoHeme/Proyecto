@@ -10,6 +10,8 @@ namespace Proyecto.Controllers
     {
         public ActionResult Index()
         {
+
+
             return View();
         }
 
